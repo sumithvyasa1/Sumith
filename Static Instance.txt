@@ -1,0 +1,28 @@
+﻿using System;
+static class ClassA
+{
+    public static int x = 7;
+    static  ClassA()
+    {
+        Console.WriteLine("value of ClassA.x "+x);
+        x = ClassB.x;
+        Console.WriteLine("value of ClassA.x " + x);
+
+    }
+}
+static class ClassB
+{
+    public static int x = ClassA.x+2;
+    static ClassB()
+    {
+        Console.WriteLine("Value of ClassB.x " + x);
+    }
+}
+static class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("ClassB.x={0} and ClassA.x={1}",ClassB.x,ClassA.x);
+        Console.ReadLine();
+    }
+}
